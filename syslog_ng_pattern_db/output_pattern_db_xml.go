@@ -150,7 +150,7 @@ func buildRuleXML(result sequence.AnalyzerResult) xRule {
 			logger.HandleError(fmt.Sprintf("Unable to make test_values map for examples for pattern %s", result.PatternId))
 		} else {
 			for key, val := range m {
-				e.TestValues.Values = append(e.TestValues.Values, xTestValue{Key: key, Value: val["name"]})
+				e.TestValues.Values = append(e.TestValues.Values, xTestValue{Key: key, Value: val["value"]})
 			}
 		}
 		rule.Examples.Examples = append(rule.Examples.Examples, e)
